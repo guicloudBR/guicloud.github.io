@@ -1,2 +1,3 @@
-# template
-Site
+GuiCloud é uma iniciativa de consultoria voltada para otimizar processos e facilitar a vida de pequenos empreendedores. Nosso objetivo é trazer tecnologia acessível, usando tanto soluções próprias quanto de terceiros, sempre buscando o maior benefício para nossos parceiros. Se você é um empreendedor que quer alavancar seu negócio com inovação e eficiência, GuiCloud é a solução ideal para você.
+
+GuiCloud is a consulting initiative focused on optimizing processes and simplifying the lives of small business owners. Our goal is to provide accessible technology, using both in-house and third-party solutions, always seeking the greatest benefit for our partners. If you're an entrepreneur looking to scale your business with innovation and efficiency, GuiCloud is the ideal solution for you.
