@@ -1,189 +1,377 @@
-/* Importando a fonte Poppins do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;400;600&display=swap');
 
-
-/* Reset e estilos básicos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --azul-escuro: #004080;
+  --azul-claro: #00AEEF;
+  --dourado: #FFD700;
+  --cinza-claro: #F4F8FB;
+  --branco: #fff;
+  --sombra: 0 4px 24px rgba(0,0,0,0.10);
 }
 
-/* Configurações gerais */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, var(--cinza-claro) 60%, var(--azul-claro) 100%);
+  color: #222;
+  min-height: 100vh;
 }
 
-
-/* ====== HEADER ====== */
 header {
-    display: flex;
-    align-items: center; /* Alinha verticalmente */
-    justify-content: space-between; /* Distribui espaço entre logo e título */
-    background: #004080; /* Azul escuro para o cabeçalho */
-    color: #fff;
-    padding: 20px;
-    border-radius: 0px 0px 0 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    gap: 10px; /* Adiciona um espaçamento fixo entre a logo e o título */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--azul-escuro);
+  color: var(--branco);
+  padding: 18px 5vw;
+  box-shadow: var(--sombra);
+  border-radius: 0 0 18px 18px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 header img {
-    max-width: 120px;
-    margin-right: 0px;
-    border-radius: 50%;
+  max-width: 80px;
+  border-radius: 50%;
+  background: var(--branco);
+  box-shadow: 0 0 12px var(--azul-claro);
 }
 
-/* Ajuste do título para usar a fonte Orbitron */
-h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
-    color: #fff;
-    font-size: 2.5em;
-    text-align: right;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    flex: 1;
+.site-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.1em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-left: 18px;
+  flex: 1;
 }
 
-/* ====== SEÇÕES ====== */
+nav {
+  display: flex;
+  gap: 18px;
+}
+
+nav a {
+  color: var(--dourado);
+  background: transparent;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  font-size: 1em;
+}
+
+nav a:hover, nav a.active {
+  background: var(--dourado);
+  color: var(--azul-escuro);
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-claro) 100%);
+  color: var(--branco);
+  padding: 60px 20px 40px 20px;
+  text-align: center;
+  box-shadow: var(--sombra);
+  border-radius: 0 0 32px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.price-highlight {
+  margin: 30px 0;
+}
+
+.old-price {
+  font-size: 1.2em;
+  text-decoration: line-through;
+  color: #ffcccc;
+  margin-right: 15px;
+}
+
+.new-price {
+  font-size: 3.5em;
+  font-weight: bold;
+  color: var(--dourado);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.3em;
+  margin: 20px 0;
+  color: var(--dourado);
+}
+
+.hero-benefits {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.hero-benefits span {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--dourado);
+  color: var(--azul-escuro);
+  padding: 20px 40px;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  background: #ffe066;
+}
+
 .container {
-    width: 80%; /* Ocupa 80% da largura da tela */
-    max-width: 1200px; /* Garante um limite máximo */
-    margin: 20px auto; /* Centraliza */
+  width: 90%;
+  max-width: 1200px;
+  margin: 32px auto 0 auto;
 }
 
-/* Estilização das seções */
-/* Ajuste das seções para manter espaçamento entre elas */
 section {
-    width: 100%;
-    padding: 30px;
-    background-color: #D9E3E8;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px; /* Adiciona espaçamento entre as seções */
+  background: var(--branco);
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+  padding: 32px 24px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
 }
 
 section h2 {
-    color: #004080;
+  color: var(--azul-escuro);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.7em;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
-/* Listas */
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
+.benefits-grid, .models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
 }
 
-/* ====== LINKS & BOTÕES ====== */
+.benefit-item, .model-card {
+  background: var(--cinza-claro);
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.benefit-item:hover, .model-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.13);
+}
+
+.benefit-item h3, .model-card h3 {
+  color: var(--azul-escuro);
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.pricing-card {
+  background: var(--cinza-claro);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.price-header {
+  margin-bottom: 30px;
+}
+
+.price-value {
+  font-size: 3em;
+  font-weight: bold;
+  color: var(--azul-escuro);
+  display: block;
+}
+
+.price-period {
+  color: #666;
+  font-size: 1.1em;
+}
+
+.price-features {
+  list-style: none;
+  text-align: left;
+  margin: 30px 0;
+}
+
+.price-features li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.price-note {
+  font-size: 0.9em;
+  color: #666;
+  margin: 20px 0;
+}
+
+.price-cta {
+  display: inline-block;
+  background: var(--azul-escuro);
+  color: var(--branco);
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.price-cta:hover {
+  background: var(--azul-claro);
+  color: var(--azul-escuro);
+}
+
+.contact-form {
+  background: var(--cinza-claro);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--azul-escuro);
+}
+
+.contact-form textarea {
+  grid-column: 1 / -1;
+  resize: vertical;
+}
+
+.form-submit {
+  background: var(--azul-escuro);
+  color: var(--branco);
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.form-submit:hover {
+  background: var(--azul-claro);
+  color: var(--azul-escuro);
+}
+
+.faq-item {
+  background: var(--cinza-claro);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+}
+
+.faq-item h3 {
+  color: var(--azul-escuro);
+  margin-bottom: 10px;
+}
+
 a {
-    color: #00AEEF;
-    text-decoration: none;
+  color: var(--azul-claro);
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
-    color: #008C9E;
+  text-decoration: underline;
+  color: var(--azul-escuro);
 }
 
-/* Botões */
-button {
-    background-color: #004080;
-    padding: 10px 20px;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #003366;
-}
-
-/* ====== RODAPÉ (FOOTER) ====== */
 footer {
-    background: #004080;
-    color: white;
-    padding: 20px 15px;
-    text-align: center;
-    font-size: 1em;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  background: var(--azul-escuro);
+  color: var(--branco);
+  padding: 28px 5vw 18px 5vw;
+  text-align: center;
+  border-radius: 18px 18px 0 0;
+  margin-top: 48px;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
 }
 
-/* Links do rodapé */
+.footer-contact {
+  margin: 18px 0 8px 0;
+  font-size: 1em;
+}
+
 footer a {
-    color: #00AEEF;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  color: var(--dourado);
+  font-weight: 600;
 }
 
 footer a:hover {
-    color: white;
+  color: var(--azul-claro);
 }
 
-/* Seção de Contato no Rodapé */
-.footer-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+@media (max-width: 900px) {
+  .container { width: 98%; }
+  .benefits-grid, .models-grid { grid-template-columns: 1fr; }
+  .pricing-card { padding: 20px; }
+  .hero-content h2 { font-size: 1.5em; }
+  .new-price { font-size: 2em; }
 }
 
-.footer-contact p {
-    margin: 8px 0;
-    line-height: 1.5;
-    font-size: 1em;
-}
-
-/* ====== RESPONSIVIDADE ====== */
-@media (max-width: 1024px) {
-    .container {
-        width: 90%; /* Garante mais espaço em telas médias */
-    }
-
-    section {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    section {
-        padding: 20px;
-        margin-bottom: 20px; /* Reduz espaçamento para melhor encaixe no mobile */
-    }
-    /* Ajuste no header */
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    /* Ajuste no container */
-    .container {
-        width: 95%;
-        padding: 10px;
-    }
-
-    /* Ajuste no footer */
-    footer {
-        font-size: 0.9em;
-        padding: 25px 10px;
-    }
-
-    .footer-contact {
-        gap: 12px;
-    }
-
-    .footer-contact p {
-        font-size: 0.95em;
-        line-height: 1.5;
-    }
-
-    footer a {
-        font-size: 1em;
-        padding: 8px 0;
-    }
+@media (max-width: 600px) {
+  header, footer { flex-direction: column; text-align: center; gap: 12px; padding: 18px 2vw; }
+  .site-title { font-size: 1.1em; margin-left: 0; }
+  nav { gap: 10px; }
+  .hero { padding: 30px 5px 20px 5px; }
+  section { padding: 12px 4px; }
 }
