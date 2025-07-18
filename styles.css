@@ -281,6 +281,8 @@ section h2 {
   border-radius: 5px;
   font-size: 1em;
   transition: border-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-form input:focus,
@@ -290,20 +292,15 @@ section h2 {
   border-color: var(--azul-escuro);
 }
 
-.contact-form textarea {
-  grid-column: 1 / -1;
-  resize: vertical;
-  margin-top: 0;
+/* Correção específica para o textarea */
+.form-row-full {
+  display: block;
+  margin-bottom: 15px;
 }
 
-/* Alternativa: Se quiser que o textarea fique na mesma largura das caixas acima */
-.form-row.full-width {
-  grid-column: 1 / -1;
-}
-
-.form-row.full-width textarea {
+.form-row-full textarea {
   width: 100%;
-  grid-column: unset;
+  margin: 0;
 }
 
 .form-submit {
@@ -323,7 +320,6 @@ section h2 {
   background: var(--azul-claro);
   color: var(--azul-escuro);
 }
-
 .faq-item {
   background: var(--cinza-claro);
   padding: 20px;
