@@ -385,6 +385,179 @@ footer a:hover {
   color: var(--azul-claro);
 }
 
+/* ========================================
+   ESTILOS ESPECÍFICOS PARA PÁGINA SOBRE
+======================================== */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+  background: var(--azul-escuro);
+  color: var(--branco);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--dourado);
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+  justify-items: center;
+}
+
+.service-card {
+  background: var(--cinza-claro);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(0, 174, 239, 0.1);
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+  font-size: 3em;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.service-card h3 {
+  color: var(--azul-escuro);
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.service-card p {
+  line-height: 1.5;
+  color: #555;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.value-item {
+  background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-claro) 100%);
+  color: var(--branco);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+}
+
+.value-icon {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.value-item h3 {
+  color: var(--dourado);
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.value-item p {
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-claro) 100%);
+  color: var(--branco);
+  text-align: center;
+  padding: 50px 30px;
+  border-radius: 20px;
+}
+
+.cta-section h2 {
+  color: var(--branco);
+  margin-bottom: 15px;
+}
+
+.cta-section p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button.primary {
+  background: var(--dourado);
+  color: var(--azul-escuro);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: var(--branco);
+  border: 2px solid var(--branco);
+}
+
+.cta-button.secondary:hover {
+  background: var(--branco);
+  color: var(--azul-escuro);
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
 @media (max-width: 900px) {
   .container { width: 98%; }
   .benefits-grid, .models-grid { grid-template-columns: 1fr; }
@@ -392,6 +565,36 @@ footer a:hover {
   .hero-content h2 { font-size: 1.5em; }
   .new-price { font-size: 2em; }
   .hero { width: 98%; }
+  
+  /* Página Sobre - Responsividade */
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 30px auto 0 auto;
+  }
+  
+  .service-card {
+    max-width: 100%;
+  }
+  
+  .values-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -401,4 +604,13 @@ footer a:hover {
   .hero { padding: 30px 15px 20px 15px; }
   section { padding: 20px 15px; }
   .form-row { grid-template-columns: 1fr; }
+  
+  /* Página Sobre - Mobile */
+  .service-card {
+    padding: 25px 20px;
+  }
+  
+  .service-icon {
+    font-size: 2.5em;
+  }
 }
