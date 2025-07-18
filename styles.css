@@ -13,7 +13,6 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  /* Fundo melhorado - mais suave e profissional */
   background: linear-gradient(135deg, #f8fbff 0%, #e3f2fd 50%, #bbdefb 100%);
   background-attachment: fixed;
   color: #222;
@@ -280,9 +279,9 @@ section h2 {
   margin-bottom: 15px;
 }
 
-/* CORREÇÃO DO TEXTAREA - Alinhamento perfeito */
 .form-row-full {
   margin-bottom: 15px;
+  width: 100%;
 }
 
 .contact-form input,
@@ -303,13 +302,13 @@ section h2 {
   border-radius: 10px;
   font-size: 1em;
   transition: border-color 0.3s;
-  width: 100%;
+  width: 100% !important;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   resize: vertical;
-  min-height: 100px;
-  /* Garantir que o textarea tenha exatamente a mesma largura */
+  min-height: 120px;
   margin: 0;
+  display: block;
 }
 
 .contact-form input:focus,
