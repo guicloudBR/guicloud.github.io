@@ -293,6 +293,17 @@ section h2 {
 .contact-form textarea {
   grid-column: 1 / -1;
   resize: vertical;
+  margin-top: 0;
+}
+
+/* Alternativa: Se quiser que o textarea fique na mesma largura das caixas acima */
+.form-row.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-row.full-width textarea {
+  width: 100%;
+  grid-column: unset;
 }
 
 .form-submit {
